@@ -1,0 +1,45 @@
+<!-- TWO WAY BINDING -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-4">
+      <form (ngSubmit)="addProduct()">
+        <div class="mb-3">
+          <label for="productName" class="form-label">Product Name</label>
+          <input type="text" class="form-control" id="productName" name="productName" [(ngModel)]="productForm" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add Product</button>
+      </form>
+    </div>
+    </div>
+
+
+      <div class="row mt-5">
+        <div class="col-sm-12 col-lg-4">
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between" *ngFor="let item of products; let i = index">
+              {{ item }}
+              <button class="btn btn-danger" (click)="deleteProduct(i)">Delete</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+<!--
+//bu component içerisinde ekleme formu olsun.(Name)+
+//Bu  componenti app.component'de çağor.+
+//sayfa yüklenir yüklenmez product isimleri listelenecek!+
+//2 way data binding
+//Reactive Forms araştırıp  geçir
+//
+//Ekleme formu ile ürün eklendiğinde liste otomatik yenilecek.+
+
+//<ul>
+//<li <button> Delete </button> </li>
+
+//</ul>
+
+//Delete butonu basıldığında ilgili eleman silinsin.
+ -->
