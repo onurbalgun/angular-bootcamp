@@ -1,15 +1,32 @@
-<!-- TWO WAY BINDING -->
+<!-- Reactive Forms -->
 
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-4">
-      <form (ngSubmit)="addProduct()">
-        <div class="mb-3">
+      <form [formGroup]="productForm" (ngSubmit)="addProduct()">
+        <div class="mb-3" formGroupName="productGroup">
+
           <label for="productName" class="form-label">Product Name</label>
-          <input type="text" class="form-control" id="productName" name="productName" [(ngModel)]="productForm" />
+          <input type="text" class="form-control mb-3" id="productName"   formControlName="productName"   />
+          <div
+          *ngIf="
+            productForm.get('productGroup.productName').invalid &&
+            (productForm.get('productGroup.productName').dirty ||
+              productForm.get('productGroup.productName').touched)
+          "
+          class="alert alert-danger"
+        >
+          <div
+              *ngIf="productForm.get(
+      'productGroup.productName'
+    ).errors?.['required'  ]"
+            >
+              Product name is required.
+            </div>
+          </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">Add Product</button>
+        <button [disabled]="!productForm.valid" type="submit" class="btn btn-primary">Add Product</button>
       </form>
     </div>
     </div>

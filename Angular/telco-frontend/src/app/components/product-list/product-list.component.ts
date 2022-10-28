@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl,FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-product-list',
@@ -6,14 +7,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent implements OnInit {
-  productForm: string = '';
+
+  productForm: FormGroup;
+
   products: string[] = [];
-  constructor() {}
-  //degis
+  constructor() {
+    this.createProducts();
+  }
+
 
 
   ngOnInit(): void {
-    this.createProducts();
+
+    this.createProductForm();
+
+  }
+  createProductForm()
+  {
+    this.productForm = new FormGroup({
+      productGroup: new FormGroup({
+        productName: new FormControl(null,Validators.required ),
+      }),
+    });
   }
   createProducts() {
     this.products = ['Patates', 'Soğan ', 'Patlican'];
@@ -22,7 +37,13 @@ export class ProductListComponent implements OnInit {
     this.products.splice(index, 1);
   }
   addProduct() {
-    this.products.push(this.productForm);
-    this.productForm = '';
+    const productValue: string = this.productForm.get(
+      'productGroup.productName'
+    ).value;
+    console.log(productValue);
+    this.products.push(productValue);
+    this.productForm.reset();
+
+
   }
 }
