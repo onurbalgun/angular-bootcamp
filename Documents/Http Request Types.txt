@@ -1,0 +1,37 @@
+An HTTP request is made by a client, to a named host, which is located on a server. The aim of the request is to access a resource on the server.
+
+To make the request, the client uses components of a URL (Uniform Resource Locator), which includes the information needed to access the resource. The components of a URL explains URLs.
+
+A correctly composed HTTP request contains the following elements:
+A request line.
+A series of HTTP headers, or header fields.
+A message body, if needed.
+Each HTTP header is followed by a carriage return line feed (CRLF). After the last of the HTTP headers, an additional CRLF is used (to give an empty line), and then any message body begins.
+
+---Http Request Methods---
+GET
+The GET method requests a representation of the specified resource. Requests using GET should only retrieve data.
+
+HEAD
+The HEAD method asks for a response identical to a GET request, but without the response body.
+
+POST
+The POST method submits an entity to the specified resource, often causing a change in state or side effects on the server.
+
+PUT
+The PUT method replaces all current representations of the target resource with the request payload.
+
+DELETE
+The DELETE method deletes the specified resource.
+
+CONNECT
+The CONNECT method establishes a tunnel to the server identified by the target resource.
+
+OPTIONS
+The OPTIONS method describes the communication options for the target resource.
+
+TRACE
+The TRACE method performs a message loop-back test along the path to the target resource.
+
+PATCH
+The PATCH method applies partial modifications to a resource.
