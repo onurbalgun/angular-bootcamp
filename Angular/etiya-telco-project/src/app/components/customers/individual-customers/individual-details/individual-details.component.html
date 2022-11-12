@@ -1,0 +1,33 @@
+<div class="individual-customer">
+  <div class="list-title individual-title">
+    <strong>ID</strong>
+    <strong>First Name</strong>
+    <strong>Last Name</strong>
+    <strong>Date of Birth</strong>
+    <strong>National ID</strong>
+  </div>
+  <div
+    class="list-item individual-item"
+    *ngFor="let detail of individualCustomerDetails"
+  >
+    <strong class="responsive-id"> {{ detail.customerId }} </strong>
+    <div class="list-item-content">
+      <fa-icon class="list-item-icon" [icon]="nameIcon"></fa-icon>
+      <p>
+        {{ detail.firstName }}
+      </p>
+    </div>
+    <div class="list-item-content">
+      <fa-icon class="list-item-icon" [icon]="nameIcon"></fa-icon>
+      <p>{{ detail.lastName }}</p>
+    </div>
+    <div class="list-item-content">
+      <fa-icon class="list-item-icon" [icon]="dateIcon"></fa-icon>
+      <p>{{ detail.dateOfBirth }}</p>
+    </div>
+    <div class="list-item-content">
+      <fa-icon class="list-item-icon" [icon]="idIcon"></fa-icon>
+      <p>{{ detail.nationalIdentity }}</p>
+    </div>
+  </div>
+</div>

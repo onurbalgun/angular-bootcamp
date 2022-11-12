@@ -1,0 +1,50 @@
+<p class="page-subtitle">Customer {{ selectedUserID }} Details</p>
+<ng-container *ngIf="customerType === 'individual'">
+  <app-individual-details
+    [selectedUserID]="selectedUserID"
+  ></app-individual-details>
+</ng-container>
+<ng-container *ngIf="customerType === 'corporate'">
+  <app-corporate-details
+    [selectedUserID]="selectedUserID"
+  ></app-corporate-details>
+</ng-container>
+<br />
+<hr />
+<br />
+<p class="page-subtitle">Customer {{ selectedUserID }} Subscriptions</p>
+<div class="subscriptions-list-title subscriptions-title">
+  <strong>Service ID</strong>
+  <strong>Service Name</strong>
+  <strong>Date Started</strong>
+</div>
+<div
+  class="subscriptions-list-item subscription-item"
+  *ngFor="let subscription of customerSubscriptions"
+>
+  <strong> {{ subscription.serviceId }} </strong>
+  <p>{{ subscription.serviceName }}</p>
+  <p>{{ subscription.dateStarted }}</p>
+</div>
+
+<br />
+<hr />
+<br />
+<p class="page-subtitle">Customer {{ selectedUserID }} Catalogs</p>
+<div class="subscriptions-list-title catalogs-title">
+  <strong>Service ID</strong>
+  <strong>Catalog Name</strong>
+  <strong>Catalog Price</strong>
+  <strong>Date Started</strong>
+</div>
+<div *ngFor="let subscription of customerSubscriptions">
+  <div
+    class="subscriptions-list-item catalog-item"
+    *ngIf="subscription.catalogName"
+  >
+    <strong> {{ subscription.serviceId }} </strong>
+    <p>{{ subscription.catalogName }}</p>
+    <p>{{ subscription.catalogPrice }}</p>
+    <p>{{ subscription.dateStarted }}</p>
+  </div>
+</div>

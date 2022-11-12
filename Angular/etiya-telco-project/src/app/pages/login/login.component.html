@@ -1,0 +1,96 @@
+<app-loading *ngIf="isLoading"></app-loading>
+
+<div class="login-container">
+  <div class="image-container">
+    <img
+      class="bg-image"
+      src="https://img.freepik.com/free-vector/digital-mobile-telecommunication-tower-network-connection-background_1017-25469.jpg?w=1380&t=st=1667418331~exp=1667418931~hmac=e85938a3a13a2905a42763987166b95feb3a11a8a951ddcf7dbba232db1a3077"
+      alt=""
+    />
+  </div>
+  <div class="form-signin">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <img
+        src="https://www.istanbulgo.org/live/wp-content/uploads/2018/09/logo-1.png"
+        alt=""
+        height="100"
+        class="me-2 mb-2 img-logo"
+      />
+      <!-- <img class="mb-4" src="" alt="" width="72" height="57" /> -->
+      <h1 class="h3 mb-3 fw-normal">Welcome back</h1>
+
+      <div class="form-floating w-100">
+        <input
+          type="text"
+          class="form-control login-input"
+          id="floatingInput"
+          placeholder="Type username"
+          formControlName="userName"
+        />
+        <label for="floatingInput">Username</label>
+        <p
+          class="error-message"
+          *ngIf="
+            loginForm.get('userName')?.invalid &&
+            loginForm.get('userName')?.touched &&
+            loginForm.get('userName')?.value === ''
+          "
+        >
+          Username field is required.
+        </p>
+        <p
+          class="error-message"
+          *ngIf="
+            loginForm.get('userName')?.invalid &&
+            loginForm.get('userName')?.touched &&
+            loginForm.get('userName')?.value !== '' &&
+            loginForm.get('userName')?.value.length < 3
+          "
+        >
+          Username must contain at least 3 characters.
+        </p>
+      </div>
+      <div class="form-floating w-100 password-form">
+        <input
+          type="password"
+          class="form-control login-input"
+          id="floatingPassword"
+          placeholder="Type password"
+          formControlName="password"
+          #passwordInput
+        />
+        <fa-icon
+          (click)="onEye()"
+          class="password-icon"
+          [icon]="passwordIcon"
+        ></fa-icon>
+        <label for="floatingPassword">Password</label>
+
+        <p
+          class="error-message"
+          *ngIf="
+            loginForm.get('password')?.invalid &&
+            loginForm.get('password')?.touched
+          "
+        >
+          Password field is required.
+        </p>
+      </div>
+
+      <button
+        class="w-100 btn btn-lg btn-login"
+        type="submit"
+        [disabled]="loginForm.invalid"
+      >
+        Log in
+      </button>
+      <p *ngIf="!isUserValid" class="error-message">
+        Username or password is incorrect!
+      </p>
+      <p>
+        Don't have an account?
+        <span class="register-text">Register now</span>
+      </p>
+    </form>
+  </div>
+</div>

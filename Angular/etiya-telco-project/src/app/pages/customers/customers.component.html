@@ -1,0 +1,13 @@
+<div class="customers-container">
+  <div class="customers-header">
+    <p class="page-title">Customers</p>
+    <a class="btn btn-add" routerLink="/homepage/newcustomer">
+      <fa-icon [icon]="plusIcon"></fa-icon>
+      New Customer
+    </a>
+  </div>
+
+  <div class="customers-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

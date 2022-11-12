@@ -1,0 +1,42 @@
+.subscriptions-title,
+.subscription-item {
+  grid-template-columns: 1fr repeat(2, 2fr);
+}
+
+.catalogs-title,
+.catalog-item {
+  grid-template-columns: 1fr repeat(3, 2fr);
+}
+
+.subscriptions-list-title,
+.subscriptions-list-item {
+  position: relative;
+  display: grid;
+  background-color: rgba(255, 255, 255, 0.856);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.subscriptions-list-item:hover {
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
+}
+
+.customer-buttons {
+  position: absolute;
+  display: flex;
+  right: 2rem;
+  gap: 1.4rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.fa-icon {
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.info-icon:hover {
+  color: #228be6;
+}

@@ -1,0 +1,81 @@
+<div class="mt-5">
+  <div class="query-form-container bordered-container">
+    <p class="form-label">Filter Customers</p>
+    <div class="input-container">
+      <div class="name-input">
+        <label class="form-label" for="name">First Name</label>
+        <input
+          id="name"
+          [(ngModel)]="searchName"
+          class="form-control"
+          type="text"
+        />
+      </div>
+      <div class="surname-input">
+        <label class="form-label" for="surname">Last Name</label>
+        <input
+          id="surname"
+          [(ngModel)]="searchSurName"
+          class="form-control"
+          type="text"
+        />
+      </div>
+      <div class="date-input">
+        <label class="form-label" for="date">Date of Birth</label>
+        <input
+          id="date"
+          [(ngModel)]="searchDate"
+          class="form-control"
+          type="date"
+          [max]="dateOfToday"
+        />
+      </div>
+      <div>
+        <button (click)="onReset()" class="btn btn-add filter-btn">
+          Reset
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="list-title individual-title">
+    <strong>ID</strong>
+    <strong>First Name</strong>
+    <strong>Last Name</strong>
+    <strong>Date of Birth</strong>
+    <strong>National ID</strong>
+  </div>
+  <div class="list-item-container" *ngIf="individualCustomers">
+    <div
+      class="list-item individual-item"
+      *ngFor="
+        let customer of individualCustomers
+          | filterCustomers: searchName:searchSurName:searchDate
+      "
+    >
+      <strong class="responsive-id"> {{ customer.customerId }} </strong>
+      <div class="list-item-content">
+        <fa-icon class="list-item-icon" [icon]="nameIcon"></fa-icon>
+        <p>{{ customer.firstName }}</p>
+      </div>
+      <div class="list-item-content">
+        <fa-icon class="list-item-icon" [icon]="nameIcon"></fa-icon>
+        <p>{{ customer.lastName }}</p>
+      </div>
+      <div class="list-item-content">
+        <fa-icon class="list-item-icon" [icon]="dateIcon"></fa-icon>
+        <p>{{ customer.dateOfBirth }}</p>
+      </div>
+      <div class="list-item-content">
+        <fa-icon class="list-item-icon" [icon]="idIcon"></fa-icon>
+        <p>{{ customer.nationalIdentity }}</p>
+      </div>
+      <div class="customer-buttons">
+        <fa-icon
+          class="fa-icon info-icon"
+          [icon]="updateIcon"
+          (click)="goToDetails(customer.customerId)"
+        ></fa-icon>
+      </div>
+    </div>
+  </div>
+</div>

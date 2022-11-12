@@ -1,0 +1,88 @@
+<div *ngIf="customer.firstName">
+  <div class="list-title individual-title">
+    <strong>First Name</strong>
+    <strong>Last Name</strong>
+    <strong>Date of Birth</strong>
+    <strong>National ID</strong>
+  </div>
+  <div class="list-item individual-item">
+    <div class="list-item-content">
+      <fa-icon class="list-item-icon" [icon]="nameIcon"></fa-icon>
+      <p>
+        {{ customer.firstName }}
+      </p>
+    </div>
+    <div class="list-item-content">
+      <fa-icon class="list-item-icon" [icon]="nameIcon"></fa-icon>
+      <p>{{ customer.lastName }}</p>
+    </div>
+    <div class="list-item-content">
+      <fa-icon class="list-item-icon" [icon]="dateIcon"></fa-icon>
+      <p>{{ customer.dateOfBirth }}</p>
+    </div>
+    <div class="list-item-content">
+      <fa-icon class="list-item-icon" [icon]="idIcon"></fa-icon>
+      <p>{{ customer.nationalIdentity }}</p>
+    </div>
+  </div>
+</div>
+
+<div class="list-item-container" *ngIf="!customer.firstName">
+  <div class="list-title corporate-title">
+    <strong>Company Name</strong>
+    <strong>Tax Number</strong>
+  </div>
+  <div class="list-item corporate-item">
+    <div class="list-item-content">
+      <fa-icon class="list-item-icon" [icon]="companyIcon"></fa-icon>
+      <p>{{ customer.companyName }}</p>
+    </div>
+    <div class="list-item-content">
+      <fa-icon class="list-item-icon" [icon]="taxIcon"></fa-icon>
+      <p>{{ customer.taxNumber }}</p>
+    </div>
+  </div>
+</div>
+
+<br />
+<hr />
+<br />
+
+<div class="services-content">
+  <div class="overview-list-title services-title">
+    <strong></strong>
+    <strong>Service Name</strong>
+  </div>
+  <div
+    class="overview-list-item services-item"
+    *ngFor="let service of services; let i = index"
+  >
+    <strong>{{ i + 1 }}</strong>
+    <p>{{ service.name }}</p>
+  </div>
+</div>
+
+<br />
+<hr />
+<br />
+
+<div class="services-content">
+  <div class="overview-list-title catalog-title">
+    <strong></strong>
+    <strong>Catalog Name</strong>
+    <strong>Catalog Price</strong>
+  </div>
+  <div
+    class="overview-list-item catalog-item"
+    *ngFor="let catalog of catalogs; let i = index"
+  >
+    <strong>{{ i + 1 }}</strong>
+    <p>{{ catalog.name }}</p>
+    <p>{{ catalog.price }}</p>
+  </div>
+</div>
+
+<div class="buttons-container">
+  <a (click)="onBack()" class="btn btn-danger">Back</a>
+  <a (click)="onSaveCustomer()" class="btn btn-success">Save</a>
+</div>

@@ -1,0 +1,86 @@
+.services-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.services-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.services-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.list-title,
+.list-item {
+  grid-template-columns: 10rem 1fr;
+}
+
+.service-buttons {
+  position: absolute;
+  display: flex;
+  right: 3rem;
+  gap: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.fa-icon {
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.update-icon:hover {
+  color: #e6b216;
+}
+
+.delete-icon:hover {
+  color: #c92a2a;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+}
+
+.query-form-container {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .service-buttons {
+    position: absolute;
+    display: flex;
+    right: 1rem;
+    gap: 1rem;
+    top: 1.5rem;
+  }
+
+  .fa-icon {
+    font-size: 1.3rem;
+  }
+
+  .list-item {
+    margin-bottom: 0;
+  }
+}
+.catalog-container {
+  display: grid;
+  grid-template-columns: 6fr 3fr 1fr;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.catalogs-header {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

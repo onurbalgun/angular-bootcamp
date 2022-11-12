@@ -1,0 +1,70 @@
+<div class="mt-5">
+  <div class="query-form-container bordered-container">
+    <p class="form-label">Filter Customers</p>
+    <div class="input-container">
+      <div class="name-input">
+        <label class="form-label" for="cId">Customer ID</label>
+        <input
+          id="cId"
+          [(ngModel)]="searchId"
+          class="form-control"
+          type="text"
+        />
+      </div>
+      <div class="name-input">
+        <label class="form-label" for="name">Company Name</label>
+        <input
+          id="name"
+          [(ngModel)]="searchCompanyName"
+          class="form-control"
+          type="text"
+        />
+      </div>
+      <div class="name-input">
+        <label class="form-label" for="tax">Tax Number</label>
+        <input
+          id="tax"
+          [(ngModel)]="searchTax"
+          class="form-control"
+          type="text"
+        />
+      </div>
+      <div>
+        <button (click)="onReset()" class="btn btn-add filter-btn">
+          Reset
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="list-title corporate-title">
+    <strong>ID</strong>
+    <strong>Company Name</strong>
+    <strong>Tax Number</strong>
+  </div>
+  <div class="list-item-container">
+    <div
+      class="list-item corporate-item"
+      *ngFor="
+        let customer of corporateCustomers
+          | filterCorporateCustomers: searchId:searchCompanyName:searchTax
+      "
+    >
+      <strong class="responsive-id"> {{ customer.customerId }} </strong>
+      <div class="list-item-content">
+        <fa-icon class="list-item-icon" [icon]="companyIcon"></fa-icon>
+        <p>{{ customer.companyName }}</p>
+      </div>
+      <div class="list-item-content">
+        <fa-icon class="list-item-icon" [icon]="taxIcon"></fa-icon>
+        <p>{{ customer.taxNumber }}</p>
+      </div>
+      <div class="customer-buttons">
+        <fa-icon
+          class="fa-icon info-icon"
+          [icon]="updateIcon"
+          (click)="goToDetails(customer.customerId)"
+        ></fa-icon>
+      </div>
+    </div>
+  </div>
+</div>

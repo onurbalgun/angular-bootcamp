@@ -1,0 +1,24 @@
+<div class="services-container">
+  <p class="form-label">
+    Choose services that you want to add in by clicking on them.
+  </p>
+  <div class="services-content">
+    <div
+      class="list-item"
+      *ngFor="let service of services; let i = index"
+      (click)="onServiceClick(service, i, $event)"
+      [ngClass]="{
+        selected: servicesSelectedStatus[service.id] === true
+      }"
+    >
+      <strong class="responsive-id service-form-id">{{ service.id }}</strong>
+      <p>{{ service.name }}</p>
+    </div>
+  </div>
+</div>
+
+<div class="buttons-container">
+  <a (click)="onBack()" class="btn btn-danger">Back</a>
+  <a (click)="onReset()" class="btn btn-secondary">Reset</a>
+  <a (click)="onNext()" class="btn btn-success">Next</a>
+</div>

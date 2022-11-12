@@ -1,0 +1,225 @@
+<div class="services-container">
+  <div class="services-header">
+    <p class="page-title">Services</p>
+    <button
+      class="btn btn-add"
+      data-bs-toggle="modal"
+      data-bs-target="#addAndUpdateModal"
+      (click)="onNewService()"
+    >
+      <fa-icon [icon]="plusIcon"></fa-icon>
+      New Service
+    </button>
+  </div>
+  <div class="query-form-container bordered-container">
+    <p class="form-label">Filter Services</p>
+    <div class="services-input-container">
+      <div class="name-input">
+        <label class="form-label" for="name">Service Name</label>
+        <input
+          id="name"
+          [(ngModel)]="searchName"
+          class="form-control"
+          type="text"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="services-content">
+    <div class="list-title">
+      <strong>ID</strong>
+      <strong>Service Name</strong>
+    </div>
+    <div class="list-item-container">
+      <div
+        class="list-item"
+        *ngFor="let service of services | filterService: searchName"
+      >
+        <strong class="responsive-id">{{ service.id }}</strong>
+        <p>{{ service.name }}</p>
+        <div class="service-buttons">
+          <fa-icon
+            class="fa-icon update-icon"
+            [icon]="updateIcon"
+            (click)="updateService(service)"
+            data-bs-toggle="modal"
+            data-bs-target="#addAndUpdateModal"
+          ></fa-icon>
+          <fa-icon
+            class="fa-icon delete-icon"
+            [icon]="deleteIcon"
+            (click)="deleteId = service.id"
+            data-bs-toggle="modal"
+            data-bs-target="#deleteModal"
+          ></fa-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DELETE MODAL -->
+
+<div
+  class="modal fade"
+  id="deleteModal"
+  tabindex="-1"
+  aria-labelledby="deleteModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="deleteModalLabel">Delete Service</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p class="form-label">Are you sure you want to delete this service?</p>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-outline-danger"
+          data-bs-dismiss="modal"
+        >
+          Close
+        </button>
+        <button
+          (click)="deleteService()"
+          data-bs-dismiss="modal"
+          type="button"
+          class="btn btn-danger"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ADD AND UPDATE MODAL -->
+
+<div
+  class="modal fade"
+  id="addAndUpdateModal"
+  tabindex="-1"
+  aria-labelledby="addAndUpdateModalLabel"
+  aria-hidden="true"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="addAndUpdateModalLabel">
+          {{
+            isUpdate ? "Update Service " + selectedService.id : "Add Service"
+          }}
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          (click)="closePopup()"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form id="myForm" [formGroup]="addServiceForm" (submit)="addService()">
+          <div class="mb-3">
+            <label for="name" class="form-label">Service Name</label>
+            <input
+              id="name"
+              formControlName="name"
+              type="text"
+              class="form-control"
+              placeholder="Please enter a service name"
+            />
+
+            <p
+              class="error-message"
+              *ngIf="
+                addServiceForm.get('name')?.invalid &&
+                addServiceForm.get('name')?.touched
+              "
+            >
+              Service name field can't be empty.
+            </p>
+            <div formArrayName="catalogs">
+              <div class="catalogs-header">
+                <p class="form-label">Catalogs</p>
+                <button
+                  type="button"
+                  class="btn btn-success"
+                  (click)="onAddCatalog()"
+                >
+                  New Catalog
+                </button>
+              </div>
+              <div
+                *ngFor="let catalogCtrl of controls; let i = index"
+                [formGroupName]="i"
+                class="catalog-container"
+                style="margin-top: 10px"
+              >
+                <div>
+                  <label for="catalog-name" class="form-label"
+                    >Catalog Name</label
+                  >
+                  <input
+                    name="catalog-name"
+                    type="text"
+                    class="form-control"
+                    formControlName="name"
+                  />
+                </div>
+                <div>
+                  <label for="catalog-price" class="form-label">Price</label>
+                  <input
+                    name="catalog-price"
+                    type="number"
+                    class="form-control"
+                    formControlName="price"
+                  />
+                </div>
+                <div class="btn-catalog-delete">
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    (click)="onDeleteCatalog(catalogCtrl, i)"
+                  >
+                    X
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-outline-danger"
+          (click)="closePopup()"
+          data-bs-dismiss="modal"
+        >
+          Close
+        </button>
+        <button
+          form="myForm"
+          class="btn btn-success"
+          type="submit"
+          [disabled]="addServiceForm.invalid"
+          data-bs-dismiss="modal"
+        >
+          {{ isUpdate ? "Update" : "Add" }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

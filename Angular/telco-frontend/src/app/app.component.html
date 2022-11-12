@@ -1,13 +1,18 @@
-<!-- <h3>MErhabalar</h3>
-<h3>{{title }}</h3>
-
-<button (click)="btnClick()" >Tıkla</button>
-
--->
-
-<app-listview></app-listview>
-<div class="container">
-  <h3 class="mb-3" >Product List</h3>
+<div class="spinner-container" *ngIf="isLoading">
+  <div class="overlay show"></div>
+  <div class="spinner show">
+    <div class="loader"></div>
+    <p>Loading...</p>
+  </div>
 </div>
 
-<app-product-list></app-product-list>
+<app-navbar (onLogoutWithValue)="handleOnLogoutWithValue($event)"></app-navbar>
+<!-- logout olduğunu yakalasın -->
+<!-- Hoşçakal -->
+<div class="container">
+  <!-- text="Hoşgeldiniz" statik string tipinde veriler verdiğimizde kullanabiliriz. -->
+  <!-- [text]="overlayTitleText" hem dinamik değişkenler için, hem de string ve diğer tipler için kullanabiliriz. -->
+  <app-overlay-title [text]="overlayTitleText"></app-overlay-title>
+</div>
+
+<router-outlet></router-outlet>

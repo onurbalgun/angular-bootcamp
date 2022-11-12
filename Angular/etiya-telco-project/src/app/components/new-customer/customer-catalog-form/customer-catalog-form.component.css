@@ -1,0 +1,51 @@
+.services-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.services-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem 1rem 1rem 0;
+}
+
+.list-item {
+  background-color: rgba(255, 255, 255, 0.856);
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.list-item.selected {
+  background-color: #63e6be;
+}
+
+.list-item p {
+  pointer-events: none;
+}
+
+.buttons-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.service-form-id {
+  display: none;
+}
+
+.form-select {
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 800px) {
+  .service-form-id {
+    display: block;
+  }
+}

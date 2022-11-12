@@ -1,0 +1,17 @@
+<div class="bordered-container">
+  <select
+    class="customer-type-select form-select form-select-md mb-3"
+    aria-label=".form-select-lg example"
+    [(ngModel)]="customerType"
+    (ngModelChange)="onCustomerTypeChange($event)"
+  >
+    <option selected>Individual Customers</option>
+    <option>Corporate Customers</option>
+  </select>
+  <div>
+    <!-- CORPORATE CUSTOMERS LIST -->
+    <app-corporate-list *ngIf="!showIndividualCustomers"></app-corporate-list>
+
+    <app-individual-list *ngIf="showIndividualCustomers"></app-individual-list>
+  </div>
+</div>

@@ -1,0 +1,508 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "name": "ADSL İnternet"
+    },
+    {
+      "id": 2,
+      "name": "VDSL İnternet"
+    },
+    {
+      "id": 3,
+      "name": "Fiber İnternet"
+    },
+    {
+      "id": 4,
+      "name": "Faturalı Telefon Hattı"
+    },
+    {
+      "id": 5,
+      "name": "Faturasız Telefon Hattı"
+    },
+    {
+      "id": 6,
+      "name": "Ev Telefonu"
+    },
+    {
+      "id": 7,
+      "name": "TV"
+    },
+    {
+      "id": 8,
+      "name": "Kurumsal İnternet"
+    },
+    {
+      "id": 9,
+      "name": "Güvenli İnternet"
+    },
+    {
+      "id": 10,
+      "name": "Fatura Ödeme"
+    }
+  ],
+  "catalogs": [
+    {
+      "id": 1,
+      "name": "ADSL İnternet 12 aylık",
+      "price": 129.99,
+      "serviceId": 1
+    },
+    {
+      "name": "VDSL İnternet 12 aylık",
+      "price": 59.99,
+      "serviceId": 2,
+      "id": 2
+    },
+    {
+      "name": "Fiber İnternet 12 aylık",
+      "price": 199.99,
+      "serviceId": 3,
+      "id": 3
+    },
+    {
+      "name": "Faturalı Telefon Hattı 12 aylık",
+      "price": 149.99,
+      "serviceId": 4,
+      "id": 4
+    },
+    {
+      "name": "Ev Telefonu 6 aylık",
+      "price": 29.99,
+      "serviceId": 6,
+      "id": 5
+    },
+    {
+      "id": 6,
+      "name": "ADSL İnternet 6 aylık",
+      "price": 81.99,
+      "serviceId": 1
+    },
+    {
+      "name": "Fiber İnternet 1  aylık",
+      "price": 59,
+      "serviceId": 3,
+      "id": 10
+    },
+    {
+      "name": "TV  12 aylık",
+      "price": 159.99,
+      "serviceId": 7,
+      "id": 11
+    },
+    {
+      "name": "TV  24 aylık",
+      "price": 259.99,
+      "serviceId": 7,
+      "id": 12
+    },
+    {
+      "name": "Kurumsal İnternet  6 aylık",
+      "price": 359.99,
+      "serviceId": 8,
+      "id": 13
+    },
+    {
+      "name": "Kurumsal İnternet  12 aylık",
+      "price": 559.99,
+      "serviceId": 8,
+      "id": 14
+    },
+    {
+      "name": "Güvenli İnternet  3 aylık",
+      "price": 39.99,
+      "serviceId": 9,
+      "id": 15
+    },
+    {
+      "name": "Güvenli İnternet  6 aylık",
+      "price": 79.99,
+      "serviceId": 9,
+      "id": 16
+    },
+    {
+      "name": "Faturasız Telefon Hattı 1 aylık",
+      "price": 59.99,
+      "serviceId": 5,
+      "id": 17
+    },
+    {
+      "name": "ADSL İnternet 3 aylık",
+      "price": 39.99,
+      "serviceId": 1,
+      "id": 18
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "customerNumber": 61528312
+    },
+    {
+      "id": 2,
+      "customerNumber": 92701158
+    },
+    {
+      "id": 3,
+      "customerNumber": 6960876
+    },
+    {
+      "id": 4,
+      "customerNumber": 41266329
+    },
+    {
+      "id": 5,
+      "customerNumber": 48634502
+    },
+    {
+      "id": 6,
+      "customerNumber": 60059323
+    },
+    {
+      "id": 7,
+      "customerNumber": 1451498
+    },
+    {
+      "id": 8,
+      "customerNumber": 59742678
+    },
+    {
+      "id": 9,
+      "customerNumber": 49231129
+    },
+    {
+      "id": 10,
+      "customerNumber": 37106027
+    },
+    {
+      "customerNumber": 56664352,
+      "id": 11
+    },
+    {
+      "customerNumber": 21,
+      "id": 12
+    },
+    {
+      "customerNumber": 2,
+      "id": 13
+    },
+    {
+      "customerNumber": 98764234,
+      "id": 14
+    },
+    {
+      "customerNumber": 6543421,
+      "id": 15
+    }
+  ],
+  "individualCustomers": [
+    {
+      "id": 1,
+      "customerId": 1,
+      "firstName": "Engin",
+      "lastName": "Demirog",
+      "nationalIdentity": 87812104109,
+      "dateOfBirth": "1986-05-03"
+    },
+    {
+      "id": 2,
+      "customerId": 3,
+      "firstName": "Ahmet",
+      "lastName": "Çetinkaya",
+      "nationalIdentity": 49753031123,
+      "dateOfBirth": "1996-10-21"
+    },
+    {
+      "id": 3,
+      "customerId": 5,
+      "firstName": "Halit",
+      "lastName": "Kalaycı",
+      "nationalIdentity": 13487887126,
+      "dateOfBirth": "1981-02-08"
+    },
+    {
+      "id": 4,
+      "customerId": 7,
+      "firstName": "Mustafa Murat",
+      "lastName": "Coşkun",
+      "nationalIdentity": 56459709203,
+      "dateOfBirth": "1993-11-28"
+    },
+    {
+      "id": 5,
+      "customerId": 9,
+      "firstName": "Kerem",
+      "lastName": "Varış",
+      "nationalIdentity": 63892576561,
+      "dateOfBirth": "2002-09-18"
+    },
+    {
+      "customerId": 14,
+      "firstName": "Mehmet",
+      "lastName": "Alparslan",
+      "nationalIdentity": 98764234,
+      "dateOfBirth": "2022-10-31",
+      "id": 6
+    },
+    {
+      "customerId": 15,
+      "firstName": "Onur",
+      "lastName": "Balgün",
+      "nationalIdentity": 6543421,
+      "dateOfBirth": "2022-11-11",
+      "id": 7
+    }
+  ],
+  "corporateCustomers": [
+    {
+      "id": 1,
+      "customerId": 2,
+      "companyName": "Kodlamaio",
+      "taxNumber": 88680242
+    },
+    {
+      "id": 2,
+      "customerId": 4,
+      "companyName": "Etiya",
+      "taxNumber": 71290239
+    },
+    {
+      "id": 3,
+      "customerId": 6,
+      "companyName": "SolidTeam",
+      "taxNumber": 43461282
+    },
+    {
+      "id": 4,
+      "customerId": 8,
+      "companyName": "DevArchitecture",
+      "taxNumber": 95278792
+    },
+    {
+      "id": 5,
+      "customerId": 10,
+      "companyName": "Hepsiburada",
+      "taxNumber": 53569170
+    }
+  ],
+  "subscriptions": [
+    {
+      "id": 2,
+      "customerId": 2,
+      "serviceId": 1,
+      "dateStarted": "2022-07-01"
+    },
+    {
+      "id": 3,
+      "customerId": 3,
+      "serviceId": 2,
+      "dateStarted": "2022-06-06"
+    },
+    {
+      "id": 4,
+      "customerId": 4,
+      "serviceId": 3,
+      "dateStarted": "2022-06-01"
+    },
+    {
+      "id": 5,
+      "customerId": 4,
+      "serviceId": 6,
+      "dateStarted": "2022-07-01"
+    },
+    {
+      "id": 6,
+      "customerId": 5,
+      "serviceId": 4,
+      "dateStarted": "2022-04-06"
+    },
+    {
+      "id": 8,
+      "customerId": 6,
+      "serviceId": 2,
+      "dateStarted": "2022-07-01"
+    },
+    {
+      "id": 9,
+      "customerId": 7,
+      "serviceId": 6,
+      "dateStarted": "2022-07-01"
+    },
+    {
+      "id": 10,
+      "customerId": 8,
+      "serviceId": 7,
+      "dateStarted": "2022-07-01"
+    },
+    {
+      "id": 11,
+      "customerId": 8,
+      "serviceId": 2,
+      "dateStarted": "2022-07-01"
+    },
+    {
+      "id": 12,
+      "customerId": 8,
+      "serviceId": 4,
+      "dateStarted": "2022-07-01"
+    },
+    {
+      "id": 15,
+      "customerId": 10,
+      "serviceId": 1,
+      "dateStarted": "2022-06-03"
+    },
+    {
+      "id": 16,
+      "customerId": 10,
+      "serviceId": 7,
+      "dateStarted": "2022-06-09"
+    },
+    {
+      "customerId": 14,
+      "serviceId": 2,
+      "catalogId": 2,
+      "dateStarted": "2022-11-11",
+      "id": 17
+    },
+    {
+      "customerId": 14,
+      "serviceId": 1,
+      "catalogId": 1,
+      "dateStarted": "2022-11-11",
+      "id": 18
+    },
+    {
+      "customerId": 14,
+      "serviceId": 4,
+      "catalogId": 4,
+      "dateStarted": "2022-11-11",
+      "id": 19
+    },
+    {
+      "customerId": 15,
+      "serviceId": 2,
+      "catalogId": 2,
+      "dateStarted": "2022-11-11",
+      "id": 20
+    },
+    {
+      "customerId": 15,
+      "serviceId": 1,
+      "catalogId": 18,
+      "dateStarted": "2022-11-11",
+      "id": 21
+    }
+  ],
+  "invoices": [
+    {
+      "id": 3,
+      "subscriptionId": 3,
+      "dateCreated": "2022-06-30",
+      "dateDue": "2022-07-28"
+    },
+    {
+      "id": 4,
+      "subscriptionId": 4,
+      "dateCreated": "2022-06-30",
+      "dateDue": "2022-07-28"
+    },
+    {
+      "id": 5,
+      "subscriptionId": 6,
+      "dateCreated": "2022-04-30",
+      "dateDue": "2022-05-28"
+    },
+    {
+      "id": 6,
+      "subscriptionId": 6,
+      "dateCreated": "2022-05-30",
+      "dateDue": "2022-06-28"
+    },
+    {
+      "id": 7,
+      "subscriptionId": 6,
+      "dateCreated": "2022-06-30",
+      "dateDue": "2022-07-28"
+    },
+    {
+      "id": 8,
+      "subscriptionId": 15,
+      "dateCreated": "2022-06-30",
+      "dateDue": "2022-07-28"
+    },
+    {
+      "id": 9,
+      "subscriptionId": 16,
+      "dateCreated": "2022-06-30",
+      "dateDue": "2022-07-28"
+    },
+    {
+      "subscriptionId": 17,
+      "dateCreated": "2022-11-08",
+      "dateDue": "2022-12-06",
+      "id": 10
+    },
+    {
+      "subscriptionId": 19,
+      "dateCreated": "2022-11-08",
+      "dateDue": "2022-12-06",
+      "id": 12
+    },
+    {
+      "subscriptionId": 17,
+      "dateCreated": "2022-11-11",
+      "dateDue": "2022-12-09",
+      "id": 13
+    },
+    {
+      "subscriptionId": 19,
+      "dateCreated": "2022-11-11",
+      "dateDue": "2022-12-09",
+      "id": 14
+    },
+    {
+      "subscriptionId": 18,
+      "dateCreated": "2022-11-11",
+      "dateDue": "2022-12-09",
+      "id": 15
+    },
+    {
+      "subscriptionId": 20,
+      "dateCreated": "2022-11-11",
+      "dateDue": "2022-12-09",
+      "id": 16
+    },
+    {
+      "subscriptionId": 21,
+      "dateCreated": "2022-11-11",
+      "dateDue": "2022-12-09",
+      "id": 17
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "userName": "admin",
+      "password": "admin"
+    },
+    {
+      "userName": "test",
+      "password": "test",
+      "id": 2
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "name": "admin"
+    }
+  ],
+  "userRoles": [
+    {
+      "id": 1,
+      "userId": 1,
+      "roleId": 1
+    }
+  ]
+}

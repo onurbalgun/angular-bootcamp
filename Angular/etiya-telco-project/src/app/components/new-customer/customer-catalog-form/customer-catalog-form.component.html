@@ -1,0 +1,25 @@
+<div class="services-container">
+  <p class="form-label">
+    Choose catalogs that you want to add in by clicking on them.
+  </p>
+  <div class="services-content">
+    <div
+      class="list-item services-list-item"
+      *ngFor="let catalog of catalogs; let i = index"
+      (click)="onCatalogClick(catalog)"
+      [ngClass]="{
+        selected: toggleCatalogCss(catalog)
+      }"
+    >
+      <strong class="responsive-id service-form-id">{{ catalog.id }}</strong>
+      <p>{{ catalog.name }}</p>
+      <p class="form-label">{{ catalog.price }} ₺</p>
+    </div>
+  </div>
+</div>
+
+<div class="buttons-container">
+  <a (click)="onBack()" class="btn btn-danger">Back</a>
+  <a (click)="onReset()" class="btn btn-secondary">Reset</a>
+  <a (click)="onNext()" class="btn btn-success">Next</a>
+</div>

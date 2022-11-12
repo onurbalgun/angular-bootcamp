@@ -1,0 +1,45 @@
+<div class="navbar-container py-2">
+  <header class="d-flex align-items-center justify-content-end">
+    <input
+      [(ngModel)]="isChecked"
+      (change)="onInputChange()"
+      type="checkbox"
+      class="hamburger-input"
+    />
+    <div class="hamburger-menu">
+      <span class="line top-line"></span>
+      <span class="line mid-line"></span>
+      <span class="line bottom-line"></span>
+    </div>
+    <input
+      class="form-control search-input"
+      type="search"
+      placeholder="Search"
+      aria-label="Search"
+    />
+    <fa-icon class="fa-icon" [icon]="notificationsIcon"></fa-icon>
+    <fa-icon class="fa-icon" [icon]="settingsIcon"></fa-icon>
+    <div class="dropdown">
+      <a
+        class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <img
+          src="https://github.com/mdo.png"
+          alt=""
+          width="32"
+          height="32"
+          class="rounded-circle me-2"
+        />
+        <strong>{{ activeUserName.userName }}</strong>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+        <li><a class="dropdown-item">Settings</a></li>
+        <li><a class="dropdown-item">Profile</a></li>
+        <li><hr class="dropdown-divider" /></li>
+        <li><a class="dropdown-item" (click)="logout()">Log out</a></li>
+      </ul>
+    </div>
+  </header>
+</div>

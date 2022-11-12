@@ -1,0 +1,24 @@
+
+
+
+
+<form >
+
+  <label   for="list_input">Add product to list.   </label>
+  <input id="list_input" type="text" #productName/>
+  <button   (click)="addProduct()" type="button" >Add</button>
+</form>
+
+<form (ngSubmit)="addProduct2(addProductForm)" #addProductForm="ngForm" >
+
+  <label  for="list_input">Add product to list using ngForm.   </label>
+  <input id="list_input" type="text"  name="productName" ngModel/>
+  <button    type="submit" >Add</button>
+</form>
+
+<ul >
+  <li *ngFor="let item of productList;let i=index">
+    {{item}}
+    <button (click)="deleteProduct(i)">Delete</button>
+  </li>
+</ul>

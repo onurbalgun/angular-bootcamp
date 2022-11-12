@@ -1,0 +1,18 @@
+@media screen and (max-width: 800px) {
+  .individual-item {
+    font-size: 2rem;
+    padding: 3rem 5rem;
+  }
+
+  .list-item-icon {
+    font-size: 3rem;
+  }
+
+  .responsive-id {
+    font-size: 1.4rem;
+  }
+
+  .list-item-icon {
+    width: 50px;
+  }
+}

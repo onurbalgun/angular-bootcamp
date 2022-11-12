@@ -1,0 +1,17 @@
+<p class="page-title">Create New Customer</p>
+<div class="progress-container">
+  <a #userCircleEl class="circle active">
+    <fa-icon class="icon" [icon]="userIcon"></fa-icon>
+  </a>
+  <div #lineEl1 class="line"></div>
+  <a #servicesCircleEl class="circle">
+    <fa-icon class="icon" [icon]="servicesIcon"></fa-icon>
+  </a>
+  <div #lineEl2 class="line"></div>
+  <a #overviewCircleEl class="circle">
+    <fa-icon class="icon" [icon]="overviewIcon"></fa-icon>
+  </a>
+</div>
+<div class="form-container">
+  <router-outlet></router-outlet>
+</div>
